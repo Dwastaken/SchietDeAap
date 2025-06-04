@@ -11,6 +11,7 @@ public class GunData : ScriptableObject
     [Header("Munitie")]
     public int maxAmmo = 30;
     public float reloadTime = 2f;
+    public bool isReloading = false;
 
     [Header("Schietgedrag")]
     public float fireRate = 0.1f;

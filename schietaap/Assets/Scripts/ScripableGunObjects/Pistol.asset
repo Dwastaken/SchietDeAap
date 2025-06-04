@@ -15,8 +15,9 @@ MonoBehaviour:
   gunName: Pistol
   damage: 10
   range: 100
-  maxAmmo: 30
+  maxAmmo: 5
   reloadTime: 2
+  isReloading: 0
   fireRate: 10
   isAutomatic: 0
   recoilAmount: {x: 1, y: 1}

@@ -3,9 +3,10 @@ using UnityEngine;
 public class WeaponSwitch : MonoBehaviour
 {
     public int selectedWeapon = 0;
-
+    Animator anim;
     void Start()
     {
+        anim = GetComponent<Animator>();
         selectWeapon();
     }
 
@@ -65,6 +66,7 @@ public class WeaponSwitch : MonoBehaviour
         foreach (Transform weapon in transform)
         {
             weapon.gameObject.SetActive(i == selectedWeapon);
+            anim.SetBool("isReloading", false   );
             i++;
         }
     }

@@ -15,8 +15,9 @@ MonoBehaviour:
   gunName: Rifle
   damage: 25
   range: 100
-  maxAmmo: 30
+  maxAmmo: 5
   reloadTime: 2
+  isReloading: 1
   fireRate: 0.1
   isAutomatic: 0
   recoilAmount: {x: 1, y: 1}

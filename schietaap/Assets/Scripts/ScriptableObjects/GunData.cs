@@ -10,6 +10,7 @@ public class GunData : ScriptableObject
 
     [Header("Munitie")]
     public int maxAmmo = 30;
+    public int totalAmmo = 120;
     public float reloadTime = 2f;
     public bool isReloading = false;
 

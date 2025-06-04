@@ -5,27 +5,27 @@ namespace Enemy
 {
     public class Enemy : MonoBehaviour
     {
-        [Header("Gun Data")] 
+        [Header("Gun Data")]
         [SerializeField] private GunData gunData;
-       
+
         private StateMachine stateMachine;
         private NavMeshAgent agent;
         [SerializeField] private GameObject player;
-        
+
         [Header("References")]
         public PathScript path;
 
-        
+
         public GunData GunData => gunData;
         public GameObject Player => player;
         public NavMeshAgent Agent => agent;
-        
+
         [Header("Debug")]
         [SerializeField] private string currentState;
 
-        [Header("Weapon Values")] 
+        [Header("Weapon Values")]
         public Transform gunBarrel;
-        
+
         [Header("Sight Values")]
         public float sightDistance = 20f;
         public float FOV = 85f;

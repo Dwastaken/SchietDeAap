@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f26a1148cc6b9b458ec41fb10975e91, type: 3}
-  m_Name: Pistol
+  m_Name: TestRifleEnemy
   m_EditorClassIdentifier: 
-  gunName: Pistol
+  gunName: SMG
   damage: 10
   range: 100
   maxAmmo: 30
   reloadTime: 2
-  fireRate: 10
-  isAutomatic: 0
+  fireRate: 0.1
+  isAutomatic: 1
   recoilAmount: {x: 1, y: 1}
   recoilRecoverySpeed: 5
   shootSound: {fileID: 0}

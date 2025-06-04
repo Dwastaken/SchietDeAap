@@ -8,12 +8,17 @@ namespace Enemy
         [Header("Gun Data")] 
         [SerializeField] private GunData gunData;
        
-        [Header("References")]
         private StateMachine stateMachine;
         private NavMeshAgent agent;
         [SerializeField] private GameObject player;
-        public NavMeshAgent Agent => agent;
+        
+        [Header("References")]
         public PathScript path;
+
+        
+        public GunData GunData => gunData;
+        public GameObject Player => player;
+        public NavMeshAgent Agent => agent;
         
         [Header("Debug")]
         [SerializeField] private string currentState;

@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: -- Player --
       objectReference: {fileID: 0}
+    - target: {fileID: 5148623399917906083, guid: 5d14ea1b653c34f408cbe1575027a220, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8596275816933093873, guid: 5d14ea1b653c34f408cbe1575027a220, type: 3}
       propertyPath: sprintspeed
       value: 10
@@ -1479,7 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb2ea58e306ed44d9f3a7814b340451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunData: {fileID: 0}
+  gunData: {fileID: 11400000, guid: ae0b7028b2e2f3d42a2421d1369a5601, type: 2}
   player: {fileID: 1405997301}
   path: {fileID: 680640291}
   currentState: 

@@ -5,6 +5,11 @@ public class AttackState : BaseState
 {
     private float moveTimer;
     private float losePlayerTimer;
+    private float shotTimer;
+    private int shotCounter;
+
+    private bool isReloading;
+    private float reloadTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +31,24 @@ public class AttackState : BaseState
         {
             losePlayerTimer = 0;
             moveTimer += Time.deltaTime;
+            shotTimer += Time.deltaTime;
+
+            enemy.transform.LookAt(enemy.Player.transform);
+            if (shotCounter < enemy.GunData.maxAmmo && shotTimer > enemy.GunData.fireRate)
+            {
+                Shoot();
+            }
+
+            if (shotCounter >= enemy.GunData.maxAmmo)
+            {
+                reloadTimer += Time.deltaTime;
+            }
+
+            if (reloadTimer >= enemy.GunData.reloadTime)
+            {
+                reloadTimer = 0;
+                shotCounter = 0;
+            }
 
             if (moveTimer > Random.Range(3, 7))
             {
@@ -46,5 +69,18 @@ public class AttackState : BaseState
 
     public override void Exit()
     {
+    }
+
+    private void Shoot()
+    {
+        Transform gunBarrel = enemy.gunBarrel;
+        GameObject bullet = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Bullet") as GameObject,
+            gunBarrel.position, enemy.transform.rotation);
+        Vector3 shootDir = (enemy.Player.transform.position - gunBarrel.transform.position).normalized;
+        bullet.GetComponent<Rigidbody>().linearVelocity =
+            Quaternion.AngleAxis(Random.Range(-3f, 3f), Vector3.up) * shootDir * 40;
+        shotTimer = 0;
+        shotCounter++;
+        Debug.Log(shotCounter);
     }
 }

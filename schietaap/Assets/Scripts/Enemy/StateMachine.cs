@@ -6,10 +6,11 @@ namespace Enemy
     public class StateMachine : MonoBehaviour
     {
         public BaseState activeState;
+        
 
         public void Init()
         {
-        
+            ChangeState(new PatrolState());
         }
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -39,6 +40,8 @@ namespace Enemy
             {
                 // Setup nieuwe state
                 activeState.stateMachine = this;
+                
+                activeState.enemy = GetComponent<Enemy>();
                 // Zet state
                 activeState.Enter();
             }

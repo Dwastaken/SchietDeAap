@@ -4,10 +4,13 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public CharacterController controller;
-    public float speed = 12f;
+    public float speed;
+    public float walkspeed = 5f;
+    public float sprintspeed = 8f;
     public float jumpHeight = 3f;
     public float gravity = -9.81f;
     Vector3 velocity;
+    
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -28,6 +31,17 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = sprintspeed;
+        }
+        else
+        {
+            speed = walkspeed;
+        }
+
+
 
         if (Input.GetButtonDown("Jump") && isGroundend)
         {

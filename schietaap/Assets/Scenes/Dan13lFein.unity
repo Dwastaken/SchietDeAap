@@ -1414,6 +1414,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: -- Player --
       objectReference: {fileID: 0}
+    - target: {fileID: 6622541092676411049, guid: 5d14ea1b653c34f408cbe1575027a220, type: 3}
+      propertyPath: bobSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596275816933093873, guid: 5d14ea1b653c34f408cbe1575027a220, type: 3}
+      propertyPath: sprintspeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

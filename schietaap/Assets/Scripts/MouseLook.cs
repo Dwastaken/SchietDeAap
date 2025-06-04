@@ -12,7 +12,7 @@ public class MouseLook : MonoBehaviour
     private float timer = 0f;
 
 
-    public float bobSpeed = 14f;
+    public float bobSpeed = 10f;
     public float bobAmount = 0.05f;
 
     void Start()

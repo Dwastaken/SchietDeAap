@@ -11,25 +11,29 @@ namespace Enemy
         private StateMachine stateMachine;
         private NavMeshAgent agent;
         [SerializeField] private GameObject player;
+        [SerializeField] private Animator animator;
 
         [Header("References")]
         public PathScript path;
-
-
+        private Ragdoll ragdoll;
+        
         public GunData GunData => gunData;
         public GameObject Player => player;
         public NavMeshAgent Agent => agent;
+        public Animator Animator => animator;
 
         [Header("Debug")]
         [SerializeField] private string currentState;
-
+        public bool setRagdoll = false;
+        
         [Header("Weapon Values")]
         public Transform gunBarrel;
 
         [Header("Sight Values")]
         public float sightDistance = 20f;
         public float FOV = 85f;
-
+        
+        
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -37,11 +41,18 @@ namespace Enemy
             agent = GetComponent<NavMeshAgent>();
             stateMachine.Init();
             player = GameObject.FindGameObjectWithTag("Player");
+            ragdoll = GetComponent<Ragdoll>();
+            
+            animator.SetBool("AttackState", true);
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (animator == null)
+                Debug.Log("Animator is null");
+            
+            SetRagdoll();
             CanSeePlayer();
             currentState = stateMachine.activeState.ToString();
         }
@@ -72,6 +83,12 @@ namespace Enemy
                 }
             }
             return false;
+        }
+
+        private void SetRagdoll()
+        {
+            if (setRagdoll)
+                ragdoll.IsRagdoll(setRagdoll);
         }
     }
 }

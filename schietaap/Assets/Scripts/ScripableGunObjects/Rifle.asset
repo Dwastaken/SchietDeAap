@@ -16,8 +16,9 @@ MonoBehaviour:
   damage: 25
   range: 100
   maxAmmo: 5
+  totalAmmo: 120
   reloadTime: 2
-  isReloading: 1
+  isReloading: 0
   fireRate: 0.1
   isAutomatic: 0
   recoilAmount: {x: 1, y: 1}

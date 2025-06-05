@@ -16,6 +16,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   maxAmmo: 5
+  totalAmmo: 120
   reloadTime: 2
   isReloading: 0
   fireRate: 10

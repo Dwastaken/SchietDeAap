@@ -59,7 +59,7 @@ public class Grenade : MonoBehaviour
                 rb.AddExplosionForce(force, transform.position, radius, 3.0f);
             }
 
-            Target target = nearbyObject.GetComponent<Target>();
+            Enemy.Enemy target = nearbyObject.GetComponent<Enemy.Enemy>();
             if (target != null)
             {
                 float distance = Vector3.Distance(transform.position, nearbyObject.transform.position);

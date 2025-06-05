@@ -100,7 +100,7 @@ public class Shooting : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit))
         {
             Debug.Log($"Geraakt: {hit.transform.name}");
-            Target target = hit.transform.GetComponent<Target>();
+            Enemy.Enemy target = hit.transform.GetComponent<Enemy.Enemy>();
 
             if (target != null)
             {

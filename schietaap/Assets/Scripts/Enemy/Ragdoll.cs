@@ -52,8 +52,9 @@ public class Ragdoll : MonoBehaviour
         for (int i = 0; i < col.Length; i++)
         {
             rb[i].isKinematic = true;
-            rb[i].useGravity= false;//disable gravity
+            rb[i].useGravity = false;//disable gravity
             col[i].enabled = false;//disable child colliders
         }
+        Destroy(gameObject);
     }
 }

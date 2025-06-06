@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AmmoPickup : MonoBehaviour
 {
+
     [Header("Ammo Settings")]
     public int ammoAmount = 30;
     public AudioClip pickupSound;
@@ -43,7 +44,7 @@ public class AmmoPickup : MonoBehaviour
 
     void Update()
     {
-        // Visual effects
+
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         float newY = startPosition.y + Mathf.Sin(Time.time * bobSpeed) * bobHeight;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
@@ -53,10 +54,10 @@ public class AmmoPickup : MonoBehaviour
             FacePlayer();
         }
 
-        // Timer countdown
+
         lifespanTimer -= Time.deltaTime;
 
-        // Start blinking if within blink window
+
         if (lifespanTimer <= blinkStartTime)
         {
             isBlinking = true;
@@ -72,7 +73,7 @@ public class AmmoPickup : MonoBehaviour
             }
         }
 
-        // Destroy after lifespan
+
         if (lifespanTimer <= 0f)
         {
             Destroy(gameObject);

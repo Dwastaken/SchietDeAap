@@ -3699,6 +3699,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6322239440256014636, guid: 57fcd3567d7e94d4fb97382c87df9fc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6621463328982072482, guid: 57fcd3567d7e94d4fb97382c87df9fc4, type: 3}
       propertyPath: m_text
       value: 'Gunname
@@ -3707,7 +3711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247250613019885400, guid: 57fcd3567d7e94d4fb97382c87df9fc4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7422965354696444324, guid: 57fcd3567d7e94d4fb97382c87df9fc4, type: 3}
       propertyPath: m_text
@@ -3724,7 +3728,8 @@ PrefabInstance:
       value: --Canvas--
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6322239440256014636, guid: 57fcd3567d7e94d4fb97382c87df9fc4, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 69369727681460992, guid: 57fcd3567d7e94d4fb97382c87df9fc4, type: 3}
       insertIndex: -1

@@ -78,9 +78,12 @@ public class AttackState : BaseState
     {
         enemy.Animator.SetBool("AttackState", true);
         Transform gunBarrel = enemy.gunBarrel;
-        GameObject bullet = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Bullet") as GameObject,
-            gunBarrel.position, enemy.transform.rotation);
         Vector3 shootDir = (enemy.Player.transform.position - gunBarrel.transform.position).normalized;
+        GameObject bullet = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Bullet") as GameObject,
+            gunBarrel.position, Quaternion.LookRotation(shootDir));
+        Quaternion baseRot = Quaternion.LookRotation(shootDir);      
+        Quaternion fixup = Quaternion.Euler(90f, 0f, 0f);  // rotate 90° around X so local-Y becomes forward
+        bullet.transform.rotation = baseRot * fixup;
         bullet.GetComponent<Rigidbody>().linearVelocity =
             Quaternion.AngleAxis(Random.Range(-3f, 3f), Vector3.up) * shootDir * 40;
         shotTimer = 0;
